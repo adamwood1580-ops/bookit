@@ -1,4 +1,4 @@
-const CACHE_NAME = "bells-golf-app-v1";
+const CACHE_NAME = "bells-golf-app-v2";
 
 const FILES_TO_CACHE = [
     "./",
