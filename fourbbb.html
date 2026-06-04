@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bells 4BBB Scorecard</title>
+
+    <link rel="stylesheet" href="styles/stableford.css" />
+    <meta name="theme-color" content="#003f24" />
+</head>
+<body>
+    <main class="page">
+        <a href="index.html" class="home-btn">← Home</a>
+
+        <section class="scorecard">
+            <header class="hero">
+                <div class="brand">
+                    <img src="assets/Bells-logo.png" alt="Bells Hotel and Country Club logo" class="club-logo" />
+                </div>
+
+                <div class="title-block">
+                    <h1>4BBB Stableford</h1>
+                </div>
+            </header>
+
+            <section class="panel">
+                <div class="panel-title">Round Details</div>
+
+                <div class="details-grid">
+                    <div>
+                        <label for="teeSelect">Tee</label>
+                        <select id="teeSelect">
+                            <option value="">Select Tee</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="roundDate">Date</label>
+                        <input id="roundDate" type="date" />
+                    </div>
+
+                    <div>
+                        <label for="playerAName">Player A</label>
+                        <input id="playerAName" type="text" placeholder="Player A" />
+                    </div>
+
+                    <div>
+                        <label for="playerBName">Player B</label>
+                        <input id="playerBName" type="text" placeholder="Player B" />
+                    </div>
+
+                    <div>
+                        <label for="playerAIndex">A Handicap Index</label>
+                        <input id="playerAIndex" type="number" step="0.1" placeholder="e.g. 12.4" />
+                    </div>
+
+                    <div>
+                        <label for="playerBIndex">B Handicap Index</label>
+                        <input id="playerBIndex" type="number" step="0.1" placeholder="e.g. 18.1" />
+                    </div>
+
+                    <div class="hcp-box">
+                        <span>A Playing HCP</span>
+                        <strong id="playerAPlaying">-</strong>
+                    </div>
+
+                    <div class="hcp-box">
+                        <span>B Playing HCP</span>
+                        <strong id="playerBPlaying">-</strong>
+                    </div>
+                </div>
+
+                <div id="courseInfo" class="course-info"></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-title">Enter Gross Scores</div>
+
+                <div class="table-wrap">
+                    <table class="score-table">
+                        <thead>
+                            <tr>
+                                <th>Hole</th>
+                                <th>Yards</th>
+                                <th>Par</th>
+                                <th>SI</th>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>Best</th>
+                            </tr>
+                        </thead>
+                        <tbody id="frontNine"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">OUT</td>
+                                <td id="outAPoints">-</td>
+                                <td id="outBPoints">-</td>
+                                <td id="outBestPoints">-</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <table class="score-table">
+                        <thead>
+                            <tr>
+                                <th>Hole</th>
+                                <th>Yards</th>
+                                <th>Par</th>
+                                <th>SI</th>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>Best</th>
+                            </tr>
+                        </thead>
+                        <tbody id="backNine"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">IN</td>
+                                <td id="inAPoints">-</td>
+                                <td id="inBPoints">-</td>
+                                <td id="inBestPoints">-</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section class="totals">
+                <div>
+                    <span>A Points</span>
+                    <strong id="totalAPoints">-</strong>
+                </div>
+
+                <div>
+                    <span>B Points</span>
+                    <strong id="totalBPoints">-</strong>
+                </div>
+
+                <div>
+                    <span>Out Best</span>
+                    <strong id="summaryOutBest">-</strong>
+                </div>
+
+                <div>
+                    <span>In Best</span>
+                    <strong id="summaryInBest">-</strong>
+                </div>
+            </section>
+
+            <section class="totals secondary-totals">
+                <div>
+                    <span>Team Points</span>
+                    <strong id="teamTotalPoints">-</strong>
+                </div>
+
+                <div>
+                    <span>A Playing HCP</span>
+                    <strong id="summaryAPlaying">-</strong>
+                </div>
+
+                <div>
+                    <span>B Playing HCP</span>
+                    <strong id="summaryBPlaying">-</strong>
+                </div>
+            </section>
+
+            <section class="actions">
+                <button id="resetRoundBtn" class="reset-btn">Reset Round</button>
+                <button id="shareScorecardBtn" class="share-btn">Save / Share Scorecard</button>
+            </section>
+        </section>
+
+        <section id="shareCard" class="share-card">
+            <div class="share-header">
+                <img src="assets/Bells-logo.png" alt="Bells Logo" class="share-logo" />
+
+                <div>
+                    <h2>Bells Hotel &amp; Country Club</h2>
+                    <p>4BBB Stableford Scorecard</p>
+                </div>
+            </div>
+
+            <div class="share-round-info">
+                <div><strong>Date</strong><span id="shareDate">-</span></div>
+                <div><strong>Tee</strong><span id="shareTee">-</span></div>
+                <div><strong>Player A</strong><span id="sharePlayerA">-</span></div>
+                <div><strong>Player B</strong><span id="sharePlayerB">-</span></div>
+                <div><strong>A PH</strong><span id="shareAPlaying">-</span></div>
+                <div><strong>B PH</strong><span id="shareBPlaying">-</span></div>
+            </div>
+
+            <div class="share-tables">
+                <table id="shareFront">
+                    <thead>
+                        <tr><th colspan="7">Front 9</th></tr>
+                        <tr>
+                            <th>Hole</th>
+                            <th>Yds</th>
+                            <th>Par</th>
+                            <th>SI</th>
+                            <th>A Pts</th>
+                            <th>B Pts</th>
+                            <th>Best</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <table id="shareBack">
+                    <thead>
+                        <tr><th colspan="7">Back 9</th></tr>
+                        <tr>
+                            <th>Hole</th>
+                            <th>Yds</th>
+                            <th>Par</th>
+                            <th>SI</th>
+                            <th>A Pts</th>
+                            <th>B Pts</th>
+                            <th>Best</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="share-summary">
+                <div>
+                    <strong>A Points</strong>
+                    <span id="shareTotalA">-</span>
+                </div>
+
+                <div>
+                    <strong>B Points</strong>
+                    <span id="shareTotalB">-</span>
+                </div>
+
+                <div>
+                    <strong>Team Points</strong>
+                    <span id="shareTeamTotal">-</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="js/course-data.js"></script>
+    <script src="js/fourbbb.js"></script>
+</body>
+</html>
