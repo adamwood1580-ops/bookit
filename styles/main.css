@@ -13,162 +13,187 @@
 body {
     margin: 0;
     min-height: 100vh;
-
     font-family: Georgia, serif;
-
     background:
-        linear-gradient(
-            rgba(0,40,20,.25),
-            rgba(0,40,20,.45)
-        ),
+        linear-gradient(rgba(0,40,20,.25), rgba(0,40,20,.45)),
         url("../assets/course-bg.JPG");
-
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
     color: var(--text);
 }
 
 .home-container {
-    max-width: 1200px;
+    max-width: 950px;
     margin: auto;
-    padding: 20px;
+    padding: 14px;
 }
 
 .home-header {
     text-align: center;
-
     background: var(--paper);
-
-    border-radius: 16px;
-
-    padding: 30px;
-
-    margin-bottom: 25px;
-
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 16px;
     box-shadow: 0 12px 35px rgba(0,0,0,.25);
 }
 
 .home-logo {
-    width: 140px;
+    width: 95px;
     height: auto;
     display: block;
     margin: auto;
 }
 
 .home-header h1 {
-    margin: 15px 0 10px;
-
+    margin: 10px 0 6px;
     color: var(--green);
-
     text-transform: uppercase;
-
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    font-size: 1.7rem;
 }
 
 .home-header p {
     margin: 0;
     color: #555;
-}
-
-.menu-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(280px,1fr));
-
-    gap: 20px;
-}
-
-.menu-card {
-    background: var(--paper);
-
-    border-radius: 16px;
-
-    padding: 30px;
-
-    text-align: center;
-
-    text-decoration: none;
-
-    color: inherit;
-
-    box-shadow: 0 12px 35px rgba(0,0,0,.2);
-
-    transition: .2s;
-}
-
-.menu-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 18px 40px rgba(0,0,0,.3);
-}
-
-.menu-icon {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.menu-card h2 {
-    color: var(--green);
-    margin-bottom: 10px;
-}
-
-.menu-card p {
-    color: #555;
-    line-height: 1.5;
-}
-
-.disabled-card {
-    opacity: .6;
-    cursor: default;
-}
-
-.home-footer {
-    margin-top: 30px;
-
-    text-align: center;
-
-    color: white;
-
-    font-size: .9rem;
-}
-
-@media(max-width:600px){
-
-    .home-header {
-        padding: 20px;
-    }
-
-    .home-logo {
-        width: 110px;
-    }
-
-    .menu-card {
-        padding: 22px;
-    }
+    font-size: 0.9rem;
 }
 
 .format-section {
-    margin-bottom: 28px;
+    margin-bottom: 16px;
 }
 
 .format-section h2 {
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: 1rem;
-    margin: 0 0 12px;
+    font-size: 0.85rem;
+    margin: 0 0 8px;
     text-shadow: 0 2px 8px rgba(0,0,0,.5);
 }
 
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.menu-card {
+    background: var(--paper);
+    border-radius: 14px;
+    padding: 14px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 10px 28px rgba(0,0,0,.2);
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 12px;
+    align-items: center;
+    min-height: 92px;
+    transition: .2s;
+}
+
+.menu-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(0,0,0,.28);
+}
+
+.menu-icon {
+    font-size: 32px;
+    line-height: 1;
+    text-align: center;
+}
+
+.menu-card h2,
 .menu-card h3 {
     color: var(--green);
-    margin: 0 0 10px;
-    font-size: 1.45rem;
+    margin: 0 0 4px;
+    font-size: 1.15rem;
+}
+
+.menu-card p {
+    color: #555;
+    line-height: 1.25;
+    margin: 0;
+    font-size: 0.82rem;
 }
 
 .disabled-card {
+    opacity: .55;
+    cursor: default;
     pointer-events: none;
+}
+
+.home-footer {
+    margin-top: 16px;
+    text-align: center;
+    color: white;
+    font-size: .82rem;
+}
+
+@media(max-width:600px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .home-container {
+        padding: 10px;
+    }
+
+    .home-header {
+        padding: 14px;
+        margin-bottom: 12px;
+    }
+
+    .home-logo {
+        width: 78px;
+    }
+
+    .home-header h1 {
+        font-size: 1.35rem;
+        margin: 8px 0 4px;
+    }
+
+    .home-header p {
+        font-size: 0.78rem;
+    }
+
+    .format-section {
+        margin-bottom: 12px;
+    }
+
+    .format-section h2 {
+        font-size: 0.75rem;
+        margin-bottom: 6px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .menu-card {
+        min-height: 72px;
+        padding: 10px;
+        grid-template-columns: 38px 1fr;
+        gap: 10px;
+    }
+
+    .menu-icon {
+        font-size: 28px;
+    }
+
+    .menu-card h2,
+    .menu-card h3 {
+        font-size: 1rem;
+    }
+
+    .menu-card p {
+        font-size: 0.74rem;
+    }
+
+    .home-footer {
+        margin-top: 10px;
+        font-size: 0.75rem;
+    }
 }
