@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="styles/main.css">
 
     <meta name="theme-color" content="#003f24">
+ <link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#003f24" />
+<link rel="apple-touch-icon" href="assets/Bells-logo.png" />
 </head>
 <body>
 
@@ -76,6 +79,9 @@
     </div>
 
 </div>
-
+ if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+    }
+</script>
 </body>
 </html>
