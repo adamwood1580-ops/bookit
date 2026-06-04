@@ -1,4 +1,4 @@
-const CACHE_NAME = "bells-golf-app-v3";
+const CACHE_NAME = "bells-golf-app-v4";
 
 const FILES_TO_CACHE = [
     "./",
@@ -16,7 +16,8 @@ const FILES_TO_CACHE = [
     "./js/fourbbb.js",
 
     "./assets/bells-logo.PNG",
-    "./assets/course-bg.JPG"
+    "./assets/course-bg.JPG",
+    "./assets/Icon.PNG"
 ];
 
 self.addEventListener("install", event => {
