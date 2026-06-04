@@ -327,3 +327,26 @@ body {
         line-height: 1.25;
     }
 }
+
+.date-row {
+    padding: 0 0.85rem 0.85rem;
+}
+
+.date-row input {
+    width: 100%;
+}
+
+.greensomes-hcp-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem;
+    padding: 0 0.85rem 0.85rem;
+}
+
+@media (max-width: 600px) {
+
+    .greensomes-hcp-row {
+        grid-template-columns: 1fr;
+    }
+
+}
