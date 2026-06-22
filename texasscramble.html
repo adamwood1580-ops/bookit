@@ -1,53 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texas Scramble</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texas Scramble Scorecard </title>
 
-    <link rel="stylesheet" href="styles/stableford.css">
+    <link rel="stylesheet" href="styles/stableford.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#003f24" />
+    <link rel="apple-touch-icon" href="assets/app-icon.png" />
 </head>
 
 <body>
+    <main class="page">
+        <a href="index.html" class="home-btn">← Home</a>
 
-<div class="page">
+        <section class="scorecard">
+            <header class="hero">
+                <div class="brand">
+                    <img src="assets/bells-logo.PNG" alt="Bells Hotel and Country Club logo" class="club-logo" />
+                </div>
 
-    <a href="index.html" class="home-btn">← Home</a>
+                <div class="title-block">
+                    <h1>Texas Scramble Scorecard</h1>
+                </div>
+            </header>
 
-    <section class="scorecard">
+            <section class="panel">
+    <div class="panel-title">Round Details</div>
 
-        <header class="hero">
-            <div class="brand">
-                <img
-                    src="assets/bells-logo.PNG"
-                    alt="Bells"
-                    class="club-logo"
-                >
-            </div>
+    <div class="details-grid">
 
-            <div class="title-block">
-                <h1>Texas Scramble</h1>
-            </div>
-        </header>
+        <div>
+            <label for="teamName">Team Name</label>
+            <input
+                id="teamName"
+                type="text"
+                placeholder="Team Name"
+            />
+        </div>
 
-        <section class="panel">
+        <div>
+            <label for="playerCount">Players</label>
+            <select id="playerCount">
+                <option value="2">2 Players</option>
+                <option value="3">3 Players</option>
+                <option value="4">4 Players</option>
+            </select>
+        </div>
 
-            <div class="panel-title">
-                Coming Soon
-            </div>
+        <div>
+            <label for="player1Name">Player 1</label>
+            <input id="player1Name" type="text">
+        </div>
 
-            <p style="
-                padding: 2rem;
-                text-align:center;
-            ">
-                Texas Scramble scoring is currently being built.
-            </p>
+        <div>
+            <label for="player1Index">Player 1 HI</label>
+            <input id="player1Index" type="number" step="0.1">
+        </div>
 
+        <div>
+            <label for="player2Name">Player 2</label>
+            <input id="player2Name" type="text">
+        </div>
+
+        <div>
+            <label for="player2Index">Player 2 HI</label>
+            <input id="player2Index" type="number" step="0.1">
+        </div>
+
+        <div id="player3Block">
+            <label for="player3Name">Player 3</label>
+            <input id="player3Name" type="text">
+        </div>
+
+        <div id="player3IndexBlock">
+            <label for="player3Index">Player 3 HI</label>
+            <input id="player3Index" type="number" step="0.1">
+        </div>
+
+        <div id="player4Block">
+            <label for="player4Name">Player 4</label>
+            <input id="player4Name" type="text">
+        </div>
+
+        <div id="player4IndexBlock">
+            <label for="player4Index">Player 4 HI</label>
+            <input id="player4Index" type="number" step="0.1">
+        </div>
+
+        <div>
+            <label for="teeSelect">Tee</label>
+            <select id="teeSelect">
+                <option value="">Select Tee</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="scoringMode">Scoring Mode</label>
+            <select id="scoringMode">
+                <option value="stableford">Stableford</option>
+                <option value="medal">Medal</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="date-row">
+        <label for="roundDate">Date</label>
+        <input id="roundDate" type="date">
+    </div>
+
+    <div class="greensomes-hcp-row">
+
+        <div class="hcp-box">
+            <span>Team HCP</span>
+            <strong id="teamPlaying">-</strong>
+        </div>
+
+        <div class="hcp-box">
+            <span>Override</span>
+            <input
+                type="checkbox"
+                id="manualOverride"
+            >
+        </div>
+
+        <div class="hcp-box">
+            <span>Manual HCP</span>
+            <input
+                type="number"
+                id="manualHandicap"
+                disabled
+            >
+        </div>
+
+    </div>
+
+    <div id="courseInfo" class="course-info"></div>
+
+</section>
+
+                <div id="courseInfo" class="course-info"></div>
+
+                <div id="courseInfo" class="course-info"></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-title">Enter Team Scores</div>
+
+                <div class="table-wrap">
+                    <table class="score-table">
+                        <thead>
+                            <tr>
+                                <th>Hole</th>
+                                <th>Yards</th>
+                                <th>Par</th>
+                                <th>SI</th>
+                                <th>Drive</th>
+                                <th>Gross</th>
+                                <th>Nett</th>
+                                <th>Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="frontNine"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">OUT</td>
+                                <td id="outPar">-</td>
+                                <td></td>
+                                <td></td>
+                                <td id="outGross">-</td>
+                                <td id="outNett">-</td>
+                                <td id="outPoints">-</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <table class="score-table">
+                        <thead>
+                            <tr>
+                                <th>Hole</th>
+                                <th>Yards</th>
+                                <th>Par</th>
+                                <th>SI</th>
+                                <th>Drive</th>
+                                <th>Gross</th>
+                                <th>Nett</th>
+                                <th>Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="backNine"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">IN</td>
+                                <td id="inPar">-</td>
+                                <td></td>
+                                <td></td>
+                                <td id="inGross">-</td>
+                                <td id="inNett">-</td>
+                                <td id="inPoints">-</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section class="totals">
+                <div>
+                    <span>Out Gross</span>
+                    <strong id="outGrossSummary">-</strong>
+                </div>
+
+                <div>
+                    <span>In Gross</span>
+                    <strong id="inGrossSummary">-</strong>
+                </div>
+
+                <div>
+                    <span>Out Nett</span>
+                    <strong id="outNettSummary">-</strong>
+                </div>
+
+                <div>
+                    <span>In Nett</span>
+                    <strong id="inNettSummary">-</strong>
+                </div>
+            </section>
+
+            <section class="totals secondary-totals">
+                <div>
+                    <span>Total Gross</span>
+                    <strong id="totalGross">-</strong>
+                </div>
+
+                <div>
+                    <span>Total Nett</span>
+                    <strong id="totalNett">-</strong>
+                </div>
+
+                <div>
+                    <span>Total Points</span>
+                    <strong id="totalPoints">-</strong>
+                </div>
+            </section>
+
+            <section class="actions">
+                <button id="resetRoundBtn" class="reset-btn">Reset Round</button>
+                <button id="shareScorecardBtn" class="share-btn">Save / Share Scorecard</button>
+            </section>
         </section>
 
-    </section>
+        <section id="shareCard" class="share-card">
+            <div class="share-header">
+                <img src="assets/bells-logo.PNG" alt="Bells Logo" class="share-logo" />
 
-</div>
+                <div>
+                    <h2>Bells Hotel &amp; Country Club</h2>
+                    <p id="shareTitle">Texas Scramble Scorecard</p>
+                </div>
+            </div>
 
+            <div class="share-round-info">
+                <div><strong>Date</strong><span id="shareDate">-</span></div>
+                <div><strong>Mode</strong><span id="shareMode">-</span></div>
+                <div><strong>Tee</strong><span id="shareTee">-</span></div>
+                <div><strong>Team</strong><span id="shareTeam">-</span></div>
+
+<div><strong>Player 1</strong><span id="sharePlayer1">-</span></div>
+<div><strong>Player 2</strong><span id="sharePlayer2">-</span></div>
+
+<div><strong>Player 3</strong><span id="sharePlayer3">-</span></div>
+<div><strong>Player 4</strong><span id="sharePlayer4">-</span></div>
+            </div>
+
+            <div class="share-tables">
+                <table id="shareFront">
+                    <thead>
+                        <tr><th colspan="8">Front 9</th></tr>
+                        <tr>
+                            <th>Hole</th>
+                            <th>Yds</th>
+                            <th>Par</th>
+                            <th>SI</th>
+                            <th>Drive</th>
+                            <th>Gross</th>
+                            <th>Nett</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <table id="shareBack">
+                    <thead>
+                        <tr><th colspan="8">Back 9</th></tr>
+                        <tr>
+                            <th>Hole</th>
+                            <th>Yds</th>
+                            <th>Par</th>
+                            <th>SI</th>
+                            <th>Drive</th>
+                            <th>Gross</th>
+                            <th>Nett</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="share-summary">
+                <div>
+                    <strong>Gross</strong>
+                    <span id="shareGross">-</span>
+                </div>
+
+                <div>
+                    <strong>Nett</strong>
+                    <span id="shareNett">-</span>
+                </div>
+
+                <div>
+                    <strong>Points</strong>
+                    <span id="sharePoints">-</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="js/course-data.js"></script>
+    <script src="js/texasscramble.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+        }
+    </script>
 </body>
 </html>
