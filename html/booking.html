@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Tee Booking | Bells Golf App</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/booking.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#003f24" />
+    <link rel="apple-touch-icon" href="assets/Icon.PNG" />
+</head>
+
+<body>
+    <main class="booking-container">
+        <header class="booking-header">
+            <img src="assets/bells-logo.PNG" alt="Bells Hotel and Country Club logo" class="booking-logo" />
+            <h1>Tee Booking</h1>
+            <p>Book your next round or join an available group.</p>
+        </header>
+
+        <section class="date-panel">
+            <button id="prevDay" class="nav-btn">‹ Previous</button>
+
+            <div class="date-display">
+                <strong id="dayName">Today</strong>
+                <span id="dateText"></span>
+            </div>
+
+            <button id="nextDay" class="nav-btn">Next ›</button>
+        </section>
+
+        <section class="summary-strip">
+            <div>
+                <strong id="availableCount">0</strong>
+                <span>Available</span>
+            </div>
+            <div>
+                <strong id="joinableCount">0</strong>
+                <span>Joinable</span>
+            </div>
+            <div>
+                <strong id="bookedCount">0</strong>
+                <span>Booked</span>
+            </div>
+        </section>
+
+        <section class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="available">Available</button>
+            <button class="filter-btn" data-filter="joinable">Joinable</button>
+        </section>
+
+        <section id="teeSheet" class="tee-sheet"></section>
+
+        <a href="index.html" class="home-link">← Back to Home</a>
+    </main>
+
+    <div id="bookingModal" class="modal hidden">
+        <div class="modal-card">
+            <button id="closeModal" class="close-btn">×</button>
+
+            <h2 id="modalTitle">Book Tee Time</h2>
+            <p id="modalTime" class="modal-time"></p>
+
+            <label>
+                Lead Booker
+                <input id="leadName" type="text" placeholder="Name" />
+            </label>
+
+            <label>
+                Contact Number
+                <input id="contactNumber" type="tel" placeholder="Mobile number" />
+            </label>
+
+            <label>
+                Players
+                <select id="playerCount">
+                    <option value="1">1 player</option>
+                    <option value="2">2 players</option>
+                    <option value="3">3 players</option>
+                    <option value="4">4 players</option>
+                </select>
+            </label>
+
+            <div id="bookingTypeWrap" class="booking-type">
+                <span>Booking Type</span>
+
+                <label>
+                    <input type="radio" name="bookingType" value="joinable" checked />
+                    Joinable
+                </label>
+
+                <label>
+                    <input type="radio" name="bookingType" value="private" />
+                    Private
+                </label>
+            </div>
+
+            <div id="playerNames" class="player-names"></div>
+
+            <button id="confirmBooking" class="confirm-btn">Confirm Booking</button>
+        </div>
+    </div>
+
+    <script src="js/booking.js"></script>
+</body>
+</html>
