@@ -1,1 +1,248 @@
+.booking-container {
+    width: min(960px, 92%);
+    margin: 0 auto;
+    padding: 24px 0 40px;
+}
 
+.booking-header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.booking-logo {
+    max-width: 180px;
+    margin-bottom: 10px;
+}
+
+.booking-header h1 {
+    margin: 0;
+    color: #fff;
+}
+
+.booking-header p {
+    color: rgba(255,255,255,0.85);
+}
+
+.date-panel,
+.summary-strip,
+.filter-bar,
+.tee-time-card,
+.modal-card {
+    background: rgba(255,255,255,0.94);
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+}
+
+.date-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.date-display {
+    text-align: center;
+    color: #003f24;
+}
+
+.date-display span {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.nav-btn,
+.filter-btn,
+.action-btn,
+.confirm-btn {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav-btn,
+.filter-btn {
+    background: #e8f1ec;
+    color: #003f24;
+}
+
+.filter-btn.active,
+.confirm-btn,
+.action-btn {
+    background: #003f24;
+    color: #fff;
+}
+
+.summary-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.summary-strip strong {
+    display: block;
+    color: #003f24;
+    font-size: 1.4rem;
+}
+
+.summary-strip span {
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.tee-sheet {
+    display: grid;
+    gap: 12px;
+}
+
+.tee-time-card {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 16px;
+}
+
+.tee-time {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #003f24;
+}
+
+.status {
+    font-weight: 800;
+}
+
+.status.available {
+    color: #087a3d;
+}
+
+.status.joinable {
+    color: #005fa8;
+}
+
+.status.booked {
+    color: #9d1c1c;
+}
+
+.action-btn:disabled {
+    background: #bbb;
+    cursor: not-allowed;
+}
+
+.home-link {
+    display: block;
+    text-align: center;
+    margin-top: 24px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-card {
+    width: min(440px, 100%);
+    padding: 22px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    border: none;
+    background: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.modal-card h2 {
+    margin-top: 0;
+    color: #003f24;
+}
+
+.modal-time {
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.modal-card label,
+.booking-type {
+    display: block;
+    margin-bottom: 14px;
+    font-weight: 700;
+    color: #003f24;
+}
+
+.modal-card input,
+.modal-card select {
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.booking-type label {
+    font-weight: 600;
+    color: #333;
+    margin-top: 8px;
+}
+
+.booking-type input {
+    width: auto;
+    margin-right: 6px;
+}
+
+.player-names {
+    display: grid;
+    gap: 10px;
+}
+
+.confirm-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 13px;
+}
+
+@media (max-width: 640px) {
+    .tee-time-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .date-panel {
+        gap: 8px;
+    }
+
+    .nav-btn {
+        padding: 9px 11px;
+        font-size: 0.85rem;
+    }
+}
