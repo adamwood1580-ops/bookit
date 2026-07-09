@@ -1,26 +1,29 @@
 .booking-container {
-    width: min(960px, 92%);
+    width: min(720px, 94%);
     margin: 0 auto;
-    padding: 24px 0 40px;
+    padding: 16px 0 32px;
 }
 
 .booking-header {
     text-align: center;
-    margin-bottom: 22px;
+    margin-bottom: 14px;
 }
 
 .booking-logo {
-    max-width: 180px;
-    margin-bottom: 10px;
+    max-width: 135px;
+    margin-bottom: 6px;
 }
 
 .booking-header h1 {
     margin: 0;
+    font-size: 1.55rem;
     color: #fff;
 }
 
 .booking-header p {
-    color: rgba(255,255,255,0.85);
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.88);
 }
 
 .date-panel,
@@ -28,27 +31,34 @@
 .filter-bar,
 .tee-time-card,
 .modal-card {
-    background: rgba(255,255,255,0.94);
-    border-radius: 18px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.22);
 }
 
 .date-panel {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
     align-items: center;
-    padding: 14px;
-    margin-bottom: 14px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .date-display {
     text-align: center;
     color: #003f24;
+    min-width: 130px;
+}
+
+.date-display strong {
+    display: block;
+    font-size: 0.95rem;
 }
 
 .date-display span {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.78rem;
 }
 
 .nav-btn,
@@ -57,7 +67,8 @@
 .confirm-btn {
     border: none;
     border-radius: 999px;
-    padding: 10px 16px;
+    padding: 9px 13px;
+    font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
 }
@@ -79,49 +90,51 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
-    padding: 14px;
-    margin-bottom: 14px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .summary-strip strong {
     display: block;
     color: #003f24;
-    font-size: 1.4rem;
+    font-size: 1.15rem;
+    line-height: 1.1;
 }
 
 .summary-strip span {
-    font-size: 0.85rem;
+    font-size: 0.72rem;
     color: #333;
 }
 
 .filter-bar {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
-    padding: 12px;
-    margin-bottom: 16px;
+    padding: 9px;
+    margin-bottom: 12px;
 }
 
 .tee-sheet {
     display: grid;
-    gap: 12px;
+    gap: 8px;
 }
 
 .tee-time-card {
     display: grid;
-    grid-template-columns: 80px 1fr auto;
-    gap: 12px;
+    grid-template-columns: 70px 1fr auto;
+    gap: 10px;
     align-items: center;
-    padding: 16px;
+    padding: 11px 13px;
 }
 
 .tee-time {
-    font-size: 1.35rem;
+    font-size: 1.18rem;
     font-weight: 800;
     color: #003f24;
 }
 
 .status {
+    font-size: 0.92rem;
     font-weight: 800;
 }
 
@@ -137,15 +150,19 @@
     color: #9d1c1c;
 }
 
+.action-btn {
+    min-width: 94px;
+}
+
 .action-btn:disabled {
-    background: #bbb;
+    background: #b7b7b7;
     cursor: not-allowed;
 }
 
 .home-link {
     display: block;
     text-align: center;
-    margin-top: 24px;
+    margin-top: 18px;
     color: #fff;
     font-weight: 700;
     text-decoration: none;
@@ -158,7 +175,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 18px;
+    padding: 14px;
     z-index: 1000;
 }
 
@@ -167,35 +184,39 @@
 }
 
 .modal-card {
-    width: min(440px, 100%);
-    padding: 22px;
+    width: min(420px, 100%);
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 18px;
     position: relative;
 }
 
 .close-btn {
     position: absolute;
-    right: 16px;
-    top: 12px;
+    right: 14px;
+    top: 9px;
     border: none;
     background: none;
-    font-size: 2rem;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
 .modal-card h2 {
-    margin-top: 0;
+    margin: 0 30px 4px 0;
+    font-size: 1.25rem;
     color: #003f24;
 }
 
 .modal-time {
     font-weight: 800;
-    margin-bottom: 16px;
+    margin: 0 0 12px;
 }
 
 .modal-card label,
 .booking-type {
     display: block;
-    margin-bottom: 14px;
+    margin-bottom: 11px;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #003f24;
 }
@@ -203,16 +224,17 @@
 .modal-card input,
 .modal-card select {
     width: 100%;
-    margin-top: 6px;
-    padding: 11px;
+    margin-top: 5px;
+    padding: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
+    font-size: 0.95rem;
 }
 
 .booking-type label {
     font-weight: 600;
     color: #333;
-    margin-top: 8px;
+    margin-top: 7px;
 }
 
 .booking-type input {
@@ -222,27 +244,76 @@
 
 .player-names {
     display: grid;
-    gap: 10px;
+    gap: 8px;
 }
 
 .confirm-btn {
     width: 100%;
-    margin-top: 10px;
-    padding: 13px;
+    margin-top: 8px;
+    padding: 12px;
 }
 
 @media (max-width: 640px) {
-    .tee-time-card {
+    .booking-container {
+        width: 94%;
+        padding-top: 10px;
+    }
+
+    .booking-logo {
+        max-width: 110px;
+    }
+
+    .booking-header h1 {
+        font-size: 1.35rem;
+    }
+
+    .booking-header p {
+        font-size: 0.82rem;
+    }
+
+    .date-panel {
         grid-template-columns: 1fr;
         text-align: center;
     }
 
-    .date-panel {
-        gap: 8px;
+    .nav-btn {
+        width: 100%;
     }
 
-    .nav-btn {
-        padding: 9px 11px;
-        font-size: 0.85rem;
+    .filter-bar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    .tee-time-card {
+        grid-template-columns: 64px 1fr;
+        grid-template-areas:
+            "time status"
+            "button button";
+        padding: 10px;
+    }
+
+    .tee-time {
+        grid-area: time;
+    }
+
+    .status {
+        grid-area: status;
+        text-align: right;
+    }
+
+    .tee-time-card .action-btn {
+        grid-area: button;
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    .summary-strip strong {
+        font-size: 1rem;
+    }
+
+    .summary-strip span {
+        font-size: 0.68rem;
     }
 }
