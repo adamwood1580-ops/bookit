@@ -38,12 +38,13 @@ body {
 
 .hero-home {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     height: 42vh;
     min-height: 300px;
     max-height: 430px;
+    text-align: center;
 }
 
 .home-logo {
@@ -52,24 +53,44 @@ body {
     height: auto;
     margin: 0 auto;
     padding-top: 24px;
-
-    filter:
-        drop-shadow(0 8px 18px rgba(0,0,0,.45));
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.45));
 }
 
-.hero-home h1,
-.title-rule {
-    display: none;
+.suite-title h1 {
+    margin: 10px 0 2px;
+    color: white;
+    font-size: 1.6rem;
+    text-shadow: 0 4px 14px rgba(0,0,0,.8);
 }
 
-.hero-home p {
+.suite-title p {
     margin: 0;
     color: white;
-    font-size: 1.05rem;
-    letter-spacing: 0.03em;
-    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-shadow: 0 4px 14px rgba(0,0,0,.8);
 }
 
+@media (max-width: 760px) {
+    .hero-home {
+        height: 44vh;
+        min-height: 320px;
+    }
+
+    .home-logo {
+        width: min(280px, 82%);
+        padding-top: 18px;
+    }
+
+    .suite-title h1 {
+        font-size: 1.35rem;
+    }
+
+    .suite-title p {
+        font-size: 0.78rem;
+    }
+}
 .format-section {
     margin-bottom: 16px;
 }
