@@ -37,23 +37,24 @@ body {
 }
 
 .hero-home {
-    text-align: center;
-    margin-bottom: 18px;
-    padding: 8px 12px 4px;
-    background: transparent;
-    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: 42vh;
+    min-height: 300px;
+    max-height: 430px;
 }
 
 .home-logo {
-    max-width: 270px;
-    width: 72%;
-    height: auto;
     display: block;
-    margin: 0 auto 8px;
+    width: min(320px, 75%);
+    height: auto;
+    margin: 0 auto;
+    padding-top: 24px;
+
     filter:
-        drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7))
-        contrast(1.08)
-        saturate(1.1);
+        drop-shadow(0 8px 18px rgba(0,0,0,.45));
 }
 
 .hero-home h1,
@@ -235,14 +236,18 @@ body {
         padding: 10px;
     }
 
-    .hero-home {
-        padding: 4px 8px 2px;
+       .hero-home {
+        height: 44vh;
+        min-height: 320px;
+        max-height: 430px;
+        padding: 0;
         margin-bottom: 12px;
     }
 
     .home-logo {
-        max-width: 230px;
-        width: 76%;
+        width: min(280px, 82%);
+        max-width: 280px;
+        padding-top: 18px;
         margin-bottom: 6px;
     }
 
@@ -349,32 +354,4 @@ body {
         grid-template-columns: 1fr;
     }
 
-}
-.hero-home {
-    height: 42vh;
-    min-height: 300px;
-    max-height: 430px;
-}
-
-.home-container {
-    max-width: 1180px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 18px 28px;
-}
-
-@media (max-width: 760px) {
-    .hero-home {
-        height: 48vh;
-        min-height: 360px;
-        max-height: 470px;
-    }
-
-    .home-container {
-        padding: 0 12px 24px;
-    }
-
-    .menu-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }
