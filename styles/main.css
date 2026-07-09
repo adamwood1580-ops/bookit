@@ -351,19 +351,27 @@ body {
 
 }
 .hero-home {
-    display: none;
+    height: 42vh;
+    min-height: 300px;
+    max-height: 430px;
 }
 
 .home-container {
     max-width: 1180px;
     width: 100%;
     margin: 0 auto;
-    padding: 18px;
+    padding: 0 18px 28px;
 }
 
 @media (max-width: 760px) {
+    .hero-home {
+        height: 48vh;
+        min-height: 360px;
+        max-height: 470px;
+    }
+
     .home-container {
-        padding: 12px;
+        padding: 0 12px 24px;
     }
 
     .menu-grid {
