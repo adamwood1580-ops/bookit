@@ -350,3 +350,24 @@ body {
     }
 
 }
+.hero-home {
+    height: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+.home-container {
+    max-width: 520px;
+    padding: 0 10px 24px;
+}
+
+@media (max-width: 760px) {
+    .hero-home {
+        height: 430px;
+    }
+
+    .home-container {
+        max-width: 100%;
+        padding: 0 8px 24px;
+    }
+}
