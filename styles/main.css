@@ -351,23 +351,22 @@ body {
 
 }
 .hero-home {
-    height: 300px;
-    margin: 0;
-    padding: 0;
+    display: none;
 }
 
 .home-container {
-    max-width: 520px;
-    padding: 0 10px 24px;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 18px;
 }
 
 @media (max-width: 760px) {
-    .hero-home {
-        height: 430px;
+    .home-container {
+        padding: 12px;
     }
 
-    .home-container {
-        max-width: 100%;
-        padding: 0 8px 24px;
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
