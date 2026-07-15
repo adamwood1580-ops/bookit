@@ -6,31 +6,38 @@
 
     <title>Tee Booking | Bells Golf App</title>
 
-
-<link rel="stylesheet" href="../styles/booking.css" />
-<link rel="manifest" href="../json/manifest.json" />
-<link rel="apple-touch-icon" href="../assets/Icon.PNG" />
-<img src="../assets/bells-logo.PNG"
-<script src="js/booking.js"></script>
+    <link rel="stylesheet" href="../styles/booking.css" />
+    <link rel="manifest" href="../json/manifest.json" />
+    <meta name="theme-color" content="#003f24" />
+    <link rel="apple-touch-icon" href="../assets/Icon.PNG" />
 </head>
 
 <body>
     <main class="booking-container">
         <header class="booking-header">
-            <img src="../assets/bells-logo.PNG" alt="Bells Hotel and Country Club logo" class="booking-logo" />
+            <img
+                src="../assets/bells-logo.PNG"
+                alt="Bells Hotel and Country Club logo"
+                class="booking-logo"
+            />
+
             <h1>Tee Booking</h1>
             <p>Book your next round or join an available group.</p>
         </header>
 
         <section class="date-panel">
-            <button id="prevDay" class="nav-btn">‹ Previous</button>
+            <button id="prevDay" class="nav-btn" type="button">
+                ‹ Previous
+            </button>
 
             <div class="date-display">
                 <strong id="dayName">Today</strong>
                 <span id="dateText"></span>
             </div>
 
-            <button id="nextDay" class="nav-btn">Next ›</button>
+            <button id="nextDay" class="nav-btn" type="button">
+                Next ›
+            </button>
         </section>
 
         <section class="summary-strip">
@@ -38,10 +45,12 @@
                 <strong id="availableCount">0</strong>
                 <span>Available</span>
             </div>
+
             <div>
                 <strong id="joinableCount">0</strong>
                 <span>Joinable</span>
             </div>
+
             <div>
                 <strong id="bookedCount">0</strong>
                 <span>Booked</span>
@@ -49,31 +58,80 @@
         </section>
 
         <section class="filter-bar">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="available">Available</button>
-            <button class="filter-btn" data-filter="joinable">Joinable</button>
+            <button
+                class="filter-btn active"
+                data-filter="all"
+                type="button"
+            >
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="available"
+                type="button"
+            >
+                Available
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="joinable"
+                type="button"
+            >
+                Joinable
+            </button>
         </section>
 
-        <section id="teeSheet" class="tee-sheet"></section>
+        <section
+            id="teeSheet"
+            class="tee-sheet"
+            aria-label="Tee times"
+        ></section>
 
-        <a href="index.html" class="home-link">← Back to Home</a>
+        <a href="index.html" class="home-link">
+            ← Back to Home
+        </a>
     </main>
 
-    <div id="bookingModal" class="modal hidden">
+    <div
+        id="bookingModal"
+        class="modal hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+    >
         <div class="modal-card">
-            <button id="closeModal" class="close-btn">×</button>
+            <button
+                id="closeModal"
+                class="close-btn"
+                type="button"
+                aria-label="Close booking form"
+            >
+                ×
+            </button>
 
             <h2 id="modalTitle">Book Tee Time</h2>
             <p id="modalTime" class="modal-time"></p>
 
             <label>
                 Lead Booker
-                <input id="leadName" type="text" placeholder="Name" />
+                <input
+                    id="leadName"
+                    type="text"
+                    placeholder="Name"
+                    autocomplete="name"
+                />
             </label>
 
             <label>
                 Contact Number
-                <input id="contactNumber" type="tel" placeholder="Mobile number" />
+                <input
+                    id="contactNumber"
+                    type="tel"
+                    placeholder="Mobile number"
+                    autocomplete="tel"
+                />
             </label>
 
             <label>
@@ -90,22 +148,37 @@
                 <span>Booking Type</span>
 
                 <label>
-                    <input type="radio" name="bookingType" value="joinable" checked />
+                    <input
+                        type="radio"
+                        name="bookingType"
+                        value="joinable"
+                        checked
+                    />
                     Joinable
                 </label>
 
                 <label>
-                    <input type="radio" name="bookingType" value="private" />
+                    <input
+                        type="radio"
+                        name="bookingType"
+                        value="private"
+                    />
                     Private
                 </label>
             </div>
 
             <div id="playerNames" class="player-names"></div>
 
-            <button id="confirmBooking" class="confirm-btn">Confirm Booking</button>
+            <button
+                id="confirmBooking"
+                class="confirm-btn"
+                type="button"
+            >
+                Confirm Booking
+            </button>
         </div>
     </div>
 
-    <script src="js/booking.js"></script>
+    <script src="../js/booking.js"></script>
 </body>
 </html>
