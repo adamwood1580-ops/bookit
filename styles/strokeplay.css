@@ -704,20 +704,23 @@ input {
 }
 
 .scorecard > .hero .brand {
-    flex: 0 0 38px;
-    width: 38px;
+    flex: 0 0 76px;
+    width: 76px;
     height: 38px;
     margin: 0;
     padding: 0;
+    overflow: visible;
 }
 
 .scorecard > .hero .club-logo {
     display: block;
-    width: 38px;
-    max-width: 38px;
+    width: 76px;
+    max-width: 76px;
+    height: 38px;
     max-height: 38px;
     object-fit: contain;
     margin: 0;
+    padding: 0;
 }
 
 .scorecard > .hero .title-block {
@@ -742,17 +745,18 @@ input {
         margin-bottom: 7px;
     }
 
-    .scorecard > .hero .brand {
-        flex-basis: 32px;
-        width: 32px;
-        height: 32px;
-    }
+   .scorecard > .hero .brand {
+    flex-basis: 68px;
+    width: 68px;
+    height: 34px;
+}
 
-    .scorecard > .hero .club-logo {
-        width: 32px;
-        max-width: 32px;
-        max-height: 32px;
-    }
+.scorecard > .hero .club-logo {
+    width: 68px;
+    max-width: 68px;
+    height: 34px;
+    max-height: 34px;
+}
 
     .scorecard > .hero .title-block h1 {
         font-size: 1rem;
