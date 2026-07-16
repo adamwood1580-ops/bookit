@@ -23,9 +23,14 @@ body {
     min-height: 100vh;
     font-family: Georgia, "Times New Roman", serif;
     color: var(--text);
+
     background:
-        linear-gradient(rgba(0, 40, 20, 0.18), rgba(0, 40, 20, 0.42)),
+        linear-gradient(
+            rgba(0, 40, 20, 0.18),
+            rgba(0, 40, 20, 0.42)
+        ),
         url("../assets/course-bg.JPG");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -39,13 +44,19 @@ body {
 
 .scorecard {
     background:
-        linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.25)),
+        linear-gradient(
+            rgba(255, 255, 255, 0.55),
+            rgba(255, 255, 255, 0.25)
+        ),
         var(--paper);
+
     border-radius: 16px;
     padding: 1.15rem;
     box-shadow: 0 18px 55px rgba(0, 0, 0, 0.38);
     border: 1px solid rgba(255, 255, 255, 0.8);
 }
+
+/* Header */
 
 .hero {
     display: grid;
@@ -53,6 +64,7 @@ body {
     gap: 1rem;
     align-items: center;
     text-align: center;
+
     margin-bottom: 0.9rem;
     border: 2px solid var(--green);
     border-radius: 10px;
@@ -77,6 +89,8 @@ body {
     line-height: 1;
 }
 
+/* Panels */
+
 .panel {
     border: 1px solid var(--line-dark);
     border-radius: 10px;
@@ -86,7 +100,12 @@ body {
 }
 
 .panel-title {
-    background: linear-gradient(180deg, var(--green-light), var(--green));
+    background: linear-gradient(
+        180deg,
+        var(--green-light),
+        var(--green)
+    );
+
     color: white;
     padding: 0.45rem;
     text-align: center;
@@ -95,6 +114,8 @@ body {
     letter-spacing: 0.06em;
     border-bottom: 2px solid var(--gold);
 }
+
+/* Player and round details */
 
 .details-grid {
     display: grid;
@@ -157,10 +178,13 @@ input {
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+
     padding: 0 0.75rem 0.75rem;
     font-size: 0.86rem;
     color: var(--muted);
 }
+
+/* Tee colours */
 
 .tee-white {
     background: var(--white-tee) !important;
@@ -176,6 +200,8 @@ input {
     background: var(--red-tee) !important;
     color: #fff !important;
 }
+
+/* Score tables */
 
 .table-wrap {
     display: grid;
@@ -203,6 +229,7 @@ input {
     position: sticky;
     top: 0;
     z-index: 2;
+
     background: var(--green);
     color: white;
     text-transform: uppercase;
@@ -247,10 +274,12 @@ input {
     width: 48px;
     min-height: 32px;
     height: 32px;
+
     padding: 0.15rem;
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
+
     border-radius: 5px;
     border: 1px solid #a89d86;
     background: white;
@@ -268,6 +297,8 @@ input {
     background: #efe6cf;
     border-top: 2px solid var(--green);
 }
+
+/* Handicap shot indicators */
 
 .shot-hole {
     background: rgba(184, 154, 66, 0.13) !important;
@@ -289,9 +320,12 @@ input {
     white-space: nowrap;
 }
 
+/* Totals */
+
 .totals {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
     border: 1px solid var(--line-dark);
     border-radius: 10px;
     overflow: hidden;
@@ -331,6 +365,8 @@ input {
     color: var(--green);
 }
 
+/* Buttons */
+
 .actions {
     text-align: center;
     margin-bottom: 1rem;
@@ -342,9 +378,11 @@ input {
     border: none;
     border-radius: 8px;
     padding: 0.75rem 1.5rem;
+
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+
     transition: all 0.2s ease;
 }
 
@@ -362,6 +400,8 @@ input {
     transform: translateY(-1px);
 }
 
+/* Scoring guide */
+
 .guide table {
     font-size: 0.84rem;
 }
@@ -378,6 +418,8 @@ input {
     margin: 0;
     color: var(--muted);
 }
+
+/* Share card */
 
 .share-card {
     display: none;
@@ -400,6 +442,7 @@ input {
     display: flex;
     align-items: center;
     gap: 24px;
+
     border-bottom: 4px solid var(--green);
     padding-bottom: 18px;
     margin-bottom: 18px;
@@ -516,6 +559,8 @@ input {
     font-weight: bold;
 }
 
+/* Tablet */
+
 @media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
@@ -538,6 +583,8 @@ input {
         grid-template-columns: 1fr;
     }
 }
+
+/* Mobile */
 
 @media (max-width: 600px) {
     body {
@@ -670,10 +717,14 @@ input {
         display: none;
     }
 }
+
+/* Home button */
+
 .home-btn {
     display: inline-block;
     margin-bottom: 12px;
     padding: 8px 14px;
+
     background: var(--green);
     color: white;
     text-decoration: none;
@@ -683,83 +734,4 @@ input {
 
 .home-btn:hover {
     background: var(--green-light);
-}
-/* Stroke Play ultra-compact header */
-
-.scorecard > .hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    width: 100%;
-    min-height: 0;
-    height: 48px;
-
-    margin: 0 0 10px;
-    padding: 4px 10px;
-
-    border: 2px solid var(--green);
-    border-radius: 8px;
-}
-
-.scorecard > .hero .brand {
-    flex: 0 0 76px;
-    width: 76px;
-    height: 38px;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-}
-
-.scorecard > .hero .club-logo {
-    display: block;
-    width: 76px;
-    max-width: 76px;
-    height: 38px;
-    max-height: 38px;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
-}
-
-.scorecard > .hero .title-block {
-    width: auto;
-    margin: 0;
-    padding: 0;
-}
-
-.scorecard > .hero .title-block h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.25rem;
-    line-height: 1;
-    white-space: nowrap;
-}
-
-@media (max-width: 600px) {
-    .scorecard > .hero {
-        height: 42px;
-        gap: 6px;
-        padding: 3px 6px;
-        margin-bottom: 7px;
-    }
-
-   .scorecard > .hero .brand {
-    flex-basis: 68px;
-    width: 68px;
-    height: 34px;
-}
-
-.scorecard > .hero .club-logo {
-    width: 68px;
-    max-width: 68px;
-    height: 34px;
-    max-height: 34px;
-}
-
-    .scorecard > .hero .title-block h1 {
-        font-size: 1rem;
-        letter-spacing: 0.02em;
-    }
 }
