@@ -727,3 +727,63 @@ input {
         text-align: left;
     }
 }
+/* Final compact Stroke Play header override */
+
+.scorecard .hero {
+    display: grid !important;
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 0 10px !important;
+    padding: 6px 10px !important;
+}
+
+.scorecard .hero .brand {
+    width: 64px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.scorecard .hero .club-logo {
+    display: block !important;
+    width: 64px !important;
+    max-width: 64px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.scorecard .hero .title-block {
+    min-width: 0;
+}
+
+.scorecard .hero .title-block h1 {
+    margin: 0 !important;
+    font-size: clamp(1.15rem, 3vw, 1.75rem) !important;
+    line-height: 1.05 !important;
+}
+
+@media (max-width: 600px) {
+    .scorecard .hero {
+        grid-template-columns: 52px minmax(0, 1fr) !important;
+        gap: 8px !important;
+        padding: 5px 8px !important;
+    }
+
+    .scorecard .hero .brand {
+        width: 52px !important;
+    }
+
+    .scorecard .hero .club-logo {
+        width: 52px !important;
+        max-width: 52px !important;
+    }
+
+    .scorecard .hero .title-block h1 {
+        font-size: 1.05rem !important;
+        text-align: left !important;
+    }
+}
