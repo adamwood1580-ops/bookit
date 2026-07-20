@@ -1,0 +1,404 @@
+/* =========================================================
+   BELLS TEXAS SCRAMBLE — PAGE-SPECIFIC STYLES
+========================================================= */
+
+
+/* =========================================================
+   1. PLAYER SECTION
+========================================================= */
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7rem;
+    padding: 0.85rem;
+}
+
+.player-card {
+    padding: 0.7rem;
+
+    background: #fffaf0;
+
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
+}
+
+.player-card h3 {
+    margin: 0 0 0.55rem;
+
+    color: var(--green);
+
+    font-size: 0.9rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.player-card label {
+    margin-top: 0.45rem;
+}
+
+
+/* =========================================================
+   2. HANDICAP ALLOWANCE CONTROLS
+========================================================= */
+
+.allowance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7rem;
+
+    padding: 0 0.85rem 0.85rem;
+}
+
+.allowance-box {
+    padding: 0.55rem;
+
+    background: #fffaf0;
+
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.allowance-box span {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 0.65rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.allowance-box strong {
+    display: block;
+
+    margin-top: 0.25rem;
+
+    color: var(--green);
+
+    font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   3. SCORECARD TABLE
+========================================================= */
+
+.scramble-table th:last-child {
+    background: var(--gold);
+    color: #111;
+}
+
+.scramble-table td:last-child {
+    background: rgba(184, 154, 66, 0.12);
+
+    color: var(--green);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   4. DRIVE SELECTION
+========================================================= */
+
+.drive-select {
+    width: 100%;
+    min-width: 54px;
+    height: 32px;
+    min-height: 32px;
+
+    padding: 0.15rem;
+
+    background: white;
+
+    border: 1px solid #a89d86;
+    border-radius: 5px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.78rem;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.drive-select:focus {
+    background: #fffbe8;
+
+    border-color: var(--gold);
+    outline: 2px solid var(--gold);
+}
+
+.drive-used {
+    background: rgba(184, 154, 66, 0.22) !important;
+    color: var(--green);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   5. DRIVE TOTALS
+========================================================= */
+
+.drive-totals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0.7rem;
+
+    margin-bottom: 0.9rem;
+}
+
+.drive-total {
+    padding: 0.7rem;
+
+    background: #fffaf0;
+
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.drive-total span {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 0.68rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.drive-total strong {
+    display: block;
+
+    margin-top: 0.25rem;
+
+    color: var(--green);
+
+    font-size: 1.35rem;
+}
+
+
+/* =========================================================
+   6. DRIVE REQUIREMENT STATUS
+========================================================= */
+
+.drive-requirement {
+    margin-bottom: 0.9rem;
+    padding: 0.75rem;
+
+    background: #fffaf0;
+
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
+
+    color: var(--green);
+
+    font-weight: bold;
+    text-align: center;
+}
+
+.drive-requirement.complete {
+    background: rgba(13, 92, 56, 0.14);
+
+    border-color: var(--green);
+}
+
+.drive-requirement.incomplete {
+    background: rgba(184, 50, 60, 0.1);
+
+    border-color: var(--red);
+    color: var(--red);
+}
+
+
+/* =========================================================
+   7. TEAM SCORE TOTALS
+========================================================= */
+
+.scramble-totals {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.scramble-totals div:last-child {
+    background: rgba(184, 154, 66, 0.2);
+}
+
+.team-nett {
+    color: var(--green);
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   8. SHARE CARD — PLAYER INFORMATION
+========================================================= */
+
+.scramble-share-players {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.scramble-share-players div {
+    padding: 12px;
+
+    background: #fffaf0;
+
+    border: 2px solid var(--line-dark);
+
+    text-align: center;
+}
+
+.scramble-share-players strong {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+}
+
+.scramble-share-players span {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   9. SHARE CARD — DRIVE TOTALS
+========================================================= */
+
+.share-drive-totals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.share-drive-totals div {
+    padding: 12px;
+
+    background: #fffaf0;
+
+    border: 2px solid var(--line-dark);
+
+    text-align: center;
+}
+
+.share-drive-totals strong {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 16px;
+
+    text-transform: uppercase;
+}
+
+.share-drive-totals span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--green);
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   10. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .player-grid,
+    .allowance-grid,
+    .drive-totals {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   11. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+    .player-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 0.5rem;
+        padding: 0.6rem;
+    }
+
+    .player-card {
+        padding: 0.55rem;
+    }
+
+    .player-card h3 {
+        margin-bottom: 0.4rem;
+
+        font-size: 0.74rem;
+    }
+
+    .allowance-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 0.5rem;
+        padding: 0 0.6rem 0.6rem;
+    }
+
+    .allowance-box {
+        padding: 0.45rem;
+    }
+
+    .drive-select {
+        min-width: 42px;
+        height: 30px;
+        min-height: 30px;
+
+        padding: 0.1rem;
+
+        font-size: 0.68rem;
+    }
+
+    .drive-totals {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 0.5rem;
+    }
+
+    .drive-total {
+        padding: 0.55rem;
+    }
+
+    .drive-total strong {
+        font-size: 1.15rem;
+    }
+
+    .scramble-totals {
+        grid-template-columns: 1fr 1fr;
+    }
+}
