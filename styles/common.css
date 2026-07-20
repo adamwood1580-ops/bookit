@@ -1,166 +1,323 @@
+/* =========================================================
+   BELLS GOLF SUITE — SHARED STYLES
+   Used by Stableford, Stroke Play, 4BBB, Greensomes
+   and Texas Scramble
+========================================================= */
+
+
+/* =========================================================
+   1. COLOURS AND VARIABLES
+========================================================= */
+
 :root {
     --green: #003f24;
     --green-light: #0d5c38;
+
     --cream: #fbf8ee;
     --paper: rgba(255, 252, 243, 0.97);
+
     --line: #cfc7b5;
     --line-dark: #8aa092;
+
     --text: #10251b;
     --muted: #6b6559;
+
     --red: #b8323c;
     --gold: #b89a42;
+
     --yellow-tee: #f2d64b;
     --white-tee: #ffffff;
     --red-tee: #9b2f3f;
 }
 
+
+/* =========================================================
+   2. GLOBAL RESET
+========================================================= */
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
 }
 
 body {
     margin: 0;
     min-height: 100vh;
+
     font-family: Georgia, "Times New Roman", serif;
     color: var(--text);
+
     background:
-        linear-gradient(rgba(0, 40, 20, 0.18), rgba(0, 40, 20, 0.42)),
-        url("assets/course-bg.JPG");
+        linear-gradient(
+            rgba(0, 40, 20, 0.18),
+            rgba(0, 40, 20, 0.42)
+        ),
+        url("../assets/course-bg.JPG");
+
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
+
+/* =========================================================
+   3. PAGE LAYOUT
+========================================================= */
+
 .page {
+    width: 100%;
     max-width: 1180px;
+
     margin: 0 auto;
     padding: 1.25rem;
 }
 
 .scorecard {
-    background:
-        linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.25)),
-        var(--paper);
-    border-radius: 16px;
     padding: 1.15rem;
-    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.38);
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.55),
+            rgba(255, 255, 255, 0.25)
+        ),
+        var(--paper);
+
     border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.38);
 }
+
+
+/* =========================================================
+   4. HOME BUTTON
+========================================================= */
+
+.home-btn {
+    display: inline-block;
+
+    margin-bottom: 12px;
+    padding: 8px 14px;
+
+    background: var(--green);
+    color: white;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.home-btn:hover {
+    background: var(--green-light);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   5. PAGE HEADER AND LOGO
+========================================================= */
 
 .hero {
     display: grid;
     grid-template-columns: 160px 1fr;
+
     gap: 1rem;
     align-items: center;
-    text-align: center;
+
     margin-bottom: 0.9rem;
+    padding: 0.65rem;
+
+    text-align: center;
+
+    background: rgba(255, 253, 247, 0.8);
+
     border: 2px solid var(--green);
     border-radius: 10px;
-    padding: 0.65rem;
-    background: rgba(255, 253, 247, 0.8);
 }
 
 .club-logo {
+    display: block;
+
     width: 100%;
     max-width: 140px;
     height: auto;
-    display: block;
+
     margin: 0 auto;
 }
 
 .title-block h1 {
     margin: 0;
-    font-size: clamp(1.45rem, 3.6vw, 2.35rem);
-    text-transform: uppercase;
+
     color: var(--green);
-    letter-spacing: 0.04em;
+
+    font-size: clamp(1.45rem, 3.6vw, 2.35rem);
     line-height: 1;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
+
+/* =========================================================
+   6. PANELS
+========================================================= */
+
 .panel {
+    margin-bottom: 0.9rem;
+
+    overflow: hidden;
+
+    background: rgba(255, 253, 247, 0.9);
+
     border: 1px solid var(--line-dark);
     border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 0.9rem;
-    background: rgba(255, 253, 247, 0.9);
 }
 
 .panel-title {
-    background: linear-gradient(180deg, var(--green-light), var(--green));
-    color: white;
     padding: 0.45rem;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--green-light),
+            var(--green)
+        );
+
+    color: white;
+
+    border-bottom: 2px solid var(--gold);
+
     text-align: center;
     text-transform: uppercase;
+
     font-weight: bold;
     letter-spacing: 0.06em;
-    border-bottom: 2px solid var(--gold);
 }
+
+
+/* =========================================================
+   7. ROUND DETAILS AND FORMS
+========================================================= */
 
 .details-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+
     gap: 0.7rem;
-    padding: 0.85rem;
     align-items: end;
+
+    padding: 0.85rem;
 }
 
 label {
     display: block;
-    text-transform: uppercase;
-    font-weight: bold;
+
     margin-bottom: 0.3rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
+
     color: var(--green);
+
+    font-size: 0.78rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
 select,
 input {
     width: 100%;
     min-height: 42px;
+
+    padding: 0.5rem;
+
+    background: white;
+
     border: 1px solid #bfb6a2;
     border-radius: 7px;
-    background: white;
-    padding: 0.5rem;
-    font-size: 0.95rem;
+
     font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.95rem;
 }
 
+select:focus,
+input:focus {
+    outline: 2px solid var(--gold);
+    border-color: var(--gold);
+}
+
+
+/* =========================================================
+   8. HANDICAP DISPLAY BOXES
+========================================================= */
+
 .hcp-box {
+    min-height: 58px;
+
+    padding: 0.45rem;
+
+    background: #fffaf0;
+
     border: 1px solid var(--line-dark);
     border-radius: 8px;
-    min-height: 58px;
-    padding: 0.45rem;
+
     text-align: center;
-    background: #fffaf0;
 }
 
 .hcp-box span {
     display: block;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.62rem;
-    letter-spacing: 0.03em;
-    line-height: 1.15;
+
     color: var(--green);
+
+    font-size: 0.62rem;
+    font-weight: bold;
+    line-height: 1.15;
+
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
 .hcp-box strong {
     display: block;
+
     margin-top: 0.24rem;
-    font-size: 1.32rem;
+
     color: var(--green);
+
+    font-size: 1.32rem;
 }
+
+
+/* =========================================================
+   9. COURSE INFORMATION
+========================================================= */
 
 .course-info {
     display: flex;
     justify-content: center;
-    gap: 1rem;
     flex-wrap: wrap;
+
+    gap: 1rem;
+
     padding: 0 0.75rem 0.75rem;
-    font-size: 0.86rem;
+
     color: var(--muted);
+
+    font-size: 0.86rem;
 }
+
+
+/* =========================================================
+   10. TEE COLOURS
+========================================================= */
 
 .tee-white {
     background: var(--white-tee) !important;
@@ -174,19 +331,27 @@ input {
 
 .tee-red {
     background: var(--red-tee) !important;
-    color: #fff !important;
+    color: white !important;
 }
+
+
+/* =========================================================
+   11. SCORECARD TABLE LAYOUT
+========================================================= */
 
 .table-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     background: #fffaf0;
 }
 
 .score-table,
 .guide table {
     width: 100%;
+
     border-collapse: collapse;
+
     background: rgba(255, 253, 247, 0.95);
 }
 
@@ -194,24 +359,45 @@ input {
 .score-table td,
 .guide th,
 .guide td {
-    border: 1px solid var(--line);
     padding: 0.42rem;
+
+    border: 1px solid var(--line);
+
     text-align: center;
 }
+
+
+/* =========================================================
+   12. SCORECARD TABLE HEADERS
+========================================================= */
 
 .score-table th {
     position: sticky;
     top: 0;
     z-index: 2;
+
     background: var(--green);
     color: white;
-    text-transform: uppercase;
+
     font-size: 0.72rem;
+
+    text-transform: uppercase;
     letter-spacing: 0.04em;
 }
 
+.score-table th:nth-child(2) {
+    background: #d1ad21;
+    color: #111;
+}
+
+
+/* =========================================================
+   13. SCORECARD TABLE CELLS
+========================================================= */
+
 .score-table td {
     height: 40px;
+
     font-size: 0.88rem;
 }
 
@@ -220,18 +406,15 @@ input {
 }
 
 .score-table td:first-child {
-    font-weight: bold;
     color: var(--green);
+
+    font-weight: bold;
 }
 
 .score-table td:nth-child(2) {
-    font-weight: bold;
     background: #fff4bf;
-}
 
-.score-table th:nth-child(2) {
-    background: #d1ad21;
-    color: #111;
+    font-weight: bold;
 }
 
 .score-table td:nth-child(3) {
@@ -240,34 +423,59 @@ input {
 
 .si {
     color: var(--red);
+
     font-weight: bold;
 }
+
+
+/* =========================================================
+   14. SCORE INPUTS
+========================================================= */
 
 .score-table input {
     width: 48px;
-    min-height: 32px;
     height: 32px;
+    min-height: 32px;
+
     padding: 0.15rem;
-    text-align: center;
+
+    background: white;
+
+    border: 1px solid #a89d86;
+    border-radius: 5px;
+
     font-size: 1rem;
     font-weight: bold;
-    border-radius: 5px;
-    border: 1px solid #a89d86;
-    background: white;
+
+    text-align: center;
 }
 
 .score-input:focus {
-    outline: 2px solid var(--gold);
-    border-color: var(--gold);
     background: #fffbe8;
+
+    border-color: var(--gold);
+    outline: 2px solid var(--gold);
 }
 
+
+/* =========================================================
+   15. SCORECARD FOOTERS
+========================================================= */
+
 .score-table tfoot td {
-    font-weight: bold;
-    text-transform: uppercase;
     background: #efe6cf;
+
     border-top: 2px solid var(--green);
+
+    font-weight: bold;
+
+    text-transform: uppercase;
 }
+
+
+/* =========================================================
+   16. SHOT ALLOCATION HIGHLIGHTING
+========================================================= */
 
 .shot-hole {
     background: rgba(184, 154, 66, 0.13) !important;
@@ -283,78 +491,115 @@ input {
 
 .shot-marker {
     margin-top: 0.15rem;
+
+    color: var(--green);
+
     font-size: 0.6rem;
     font-weight: bold;
-    color: var(--green);
+
+    line-height: 1;
     white-space: nowrap;
 }
+
+
+/* =========================================================
+   17. TOTALS
+========================================================= */
 
 .totals {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
+    margin-bottom: 0.9rem;
+
+    overflow: hidden;
+
+    background: #fffaf0;
+
     border: 1px solid var(--line-dark);
     border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 0.9rem;
-    background: #fffaf0;
 }
 
 .secondary-totals {
     grid-template-columns: repeat(3, 1fr);
+
     margin-top: -0.4rem;
 }
 
 .totals div {
     padding: 0.7rem;
-    text-align: center;
+
     border-right: 1px solid var(--line);
+
+    text-align: center;
 }
 
 .totals div:last-child {
-    border-right: none;
     background: rgba(184, 154, 66, 0.16);
+
+    border-right: none;
 }
 
 .totals span {
     display: block;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.72rem;
+
     color: var(--green);
+
+    font-size: 0.72rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
     letter-spacing: 0.04em;
 }
 
 .totals strong {
     display: block;
+
     margin-top: 0.25rem;
-    font-size: 1.55rem;
+
     color: var(--green);
+
+    font-size: 1.55rem;
 }
 
+
+/* =========================================================
+   18. ACTION BUTTONS
+========================================================= */
+
 .actions {
-    text-align: center;
     margin-bottom: 1rem;
+
+    text-align: center;
 }
 
 .reset-btn,
 .share-btn {
+    padding: 0.75rem 1.5rem;
+
     color: white;
+
     border: none;
     border-radius: 8px;
-    padding: 0.75rem 1.5rem;
+
     font-size: 1rem;
     font-weight: bold;
+
     cursor: pointer;
-    transition: all 0.2s ease;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
 }
 
 .reset-btn {
-    background: #9b2f3f;
+    background: var(--red);
 }
 
 .share-btn {
-    background: var(--green);
     margin-left: 0.5rem;
+
+    background: var(--green);
 }
 
 .reset-btn:hover,
@@ -362,47 +607,84 @@ input {
     transform: translateY(-1px);
 }
 
+.reset-btn:active,
+.share-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn:disabled,
+.share-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   19. GUIDE TABLE
+========================================================= */
+
 .guide table {
     font-size: 0.84rem;
 }
 
 .guide th {
-    text-transform: uppercase;
-    color: var(--green);
     background: #f5efdf;
+    color: var(--green);
+
+    text-transform: uppercase;
 }
 
 .guide p {
-    text-align: center;
-    padding: 0.75rem;
     margin: 0;
+    padding: 0.75rem;
+
     color: var(--muted);
+
+    text-align: center;
 }
+
+
+/* =========================================================
+   20. SHARE CARD
+========================================================= */
 
 .share-card {
     display: none;
+
     width: 1200px;
-    background: #fbf8ee;
-    color: #10251b;
+
     padding: 30px;
+
+    background: var(--cream);
+    color: var(--text);
+
     font-family: Georgia, "Times New Roman", serif;
 }
 
 .share-card-exporting {
     display: block;
+
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
     z-index: 9999;
 }
+
+
+/* =========================================================
+   21. SHARE CARD HEADER
+========================================================= */
 
 .share-header {
     display: flex;
     align-items: center;
+
     gap: 24px;
-    border-bottom: 4px solid var(--green);
-    padding-bottom: 18px;
+
     margin-bottom: 18px;
+    padding-bottom: 18px;
+
+    border-bottom: 4px solid var(--green);
 }
 
 .share-logo {
@@ -412,88 +694,131 @@ input {
 
 .share-header h2 {
     margin: 0;
+
     color: var(--green);
+
     font-size: 38px;
+
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
 
 .share-header p {
     margin: 6px 0 0;
+
     color: var(--muted);
+
     font-size: 24px;
 }
+
+
+/* =========================================================
+   22. SHARE ROUND INFORMATION
+========================================================= */
 
 .share-round-info {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    margin-bottom: 20px;
+
     gap: 10px;
+
+    margin-bottom: 20px;
 }
 
 .share-round-info div {
-    border: 2px solid var(--line-dark);
-    background: #fffaf0;
     padding: 12px;
+
+    background: #fffaf0;
+
+    border: 2px solid var(--line-dark);
+
     text-align: center;
 }
 
 .share-round-info strong {
     display: block;
+
     color: var(--green);
-    text-transform: uppercase;
+
     font-size: 16px;
+
+    text-transform: uppercase;
 }
 
 .share-round-info span {
     display: block;
+
     margin-top: 6px;
+
     font-size: 22px;
     font-weight: bold;
 }
 
+
+/* =========================================================
+   23. SHARE SCORE TABLES
+========================================================= */
+
 .share-tables {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     gap: 20px;
 }
 
 .share-tables table {
     width: 100%;
+
     border-collapse: collapse;
+
     background: white;
 }
 
 .share-tables th,
 .share-tables td {
-    border: 1px solid #999;
     padding: 8px;
-    text-align: center;
+
+    border: 1px solid #999;
+
     font-size: 18px;
+
+    text-align: center;
 }
 
 .share-tables th {
     background: var(--green);
     color: white;
+
     text-transform: uppercase;
 }
 
 .share-tables td:nth-child(2) {
     background: #fff4bf;
+
     font-weight: bold;
 }
 
+
+/* =========================================================
+   24. SHARE SUMMARY
+========================================================= */
+
 .share-summary {
-    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 10px;
+
+    margin-top: 20px;
 }
 
 .share-summary div {
-    border: 2px solid var(--green);
-    background: #fffaf0;
     padding: 16px;
+
+    background: #fffaf0;
+
+    border: 2px solid var(--green);
+
     text-align: center;
 }
 
@@ -503,22 +828,34 @@ input {
 
 .share-summary strong {
     display: block;
+
     color: var(--green);
-    text-transform: uppercase;
+
     font-size: 20px;
+
+    text-transform: uppercase;
 }
 
 .share-summary span {
     display: block;
+
     margin-top: 8px;
+
     color: var(--green);
+
     font-size: 40px;
     font-weight: bold;
 }
 
+
+/* =========================================================
+   25. TABLET LAYOUT
+========================================================= */
+
 @media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
+
         gap: 0.5rem;
     }
 
@@ -539,6 +876,11 @@ input {
     }
 }
 
+
+/* =========================================================
+   26. MOBILE LAYOUT
+========================================================= */
+
 @media (max-width: 600px) {
     body {
         background-attachment: scroll;
@@ -550,11 +892,13 @@ input {
 
     .scorecard {
         padding: 0.55rem;
+
         border-radius: 10px;
     }
 
     .hero {
         display: block;
+
         margin-bottom: 0.6rem;
         padding: 0.5rem;
     }
@@ -568,41 +912,50 @@ input {
     }
 
     .title-block h1 {
+        margin-top: 0.25rem;
+
         font-size: 1.38rem;
         line-height: 1;
-        margin-top: 0.25rem;
     }
 
     .panel {
         margin-bottom: 0.6rem;
+
         border-radius: 8px;
     }
 
     .panel-title {
         padding: 0.36rem;
+
         font-size: 0.78rem;
     }
 
     .details-grid {
         grid-template-columns: 1fr 1fr;
-        padding: 0.6rem;
+
         gap: 0.5rem;
+
+        padding: 0.6rem;
     }
 
     label {
         margin-bottom: 0.22rem;
+
         font-size: 0.68rem;
     }
 
     select,
     input {
         min-height: 38px;
-        font-size: 0.82rem;
+
         padding: 0.42rem;
+
+        font-size: 0.82rem;
     }
 
     .hcp-box {
         min-height: 54px;
+
         padding: 0.38rem;
     }
 
@@ -612,12 +965,15 @@ input {
 
     .hcp-box strong {
         margin-top: 0.15rem;
+
         font-size: 1.12rem;
     }
 
     .course-info {
         gap: 0.5rem;
+
         padding: 0 0.45rem 0.6rem;
+
         font-size: 0.72rem;
     }
 
@@ -626,6 +982,7 @@ input {
     .guide th,
     .guide td {
         padding: 0.28rem;
+
         font-size: 0.68rem;
     }
 
@@ -635,8 +992,9 @@ input {
 
     .score-table input {
         width: 42px;
-        min-height: 30px;
         height: 30px;
+        min-height: 30px;
+
         font-size: 0.86rem;
     }
 
@@ -656,12 +1014,14 @@ input {
     .actions {
         display: grid;
         grid-template-columns: 1fr;
+
         gap: 0.6rem;
     }
 
     .reset-btn,
     .share-btn {
         width: 100%;
+
         margin-left: 0;
         padding: 0.85rem;
     }
@@ -669,18 +1029,4 @@ input {
     .guide {
         display: none;
     }
-}
-.home-btn {
-    display: inline-block;
-    margin-bottom: 12px;
-    padding: 8px 14px;
-    background: var(--green);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-.home-btn:hover {
-    background: var(--green-light);
 }
