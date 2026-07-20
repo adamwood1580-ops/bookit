@@ -1,0 +1,400 @@
+/* =========================================================
+   BELLS GREENSOMES — PAGE-SPECIFIC STYLES
+========================================================= */
+
+
+/* =========================================================
+   1. MODE SELECTOR
+========================================================= */
+
+.mode-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0.6rem;
+
+    padding: 0.85rem;
+}
+
+.mode-btn {
+    min-height: 42px;
+
+    padding: 0.65rem 1rem;
+
+    background: #fffaf0;
+    color: var(--green);
+
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    cursor: pointer;
+}
+
+.mode-btn.active {
+    background: var(--green);
+    color: white;
+
+    border-color: var(--green);
+}
+
+
+/* =========================================================
+   2. PLAYER DETAILS
+========================================================= */
+
+.greensomes-player-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0.7rem;
+
+    padding: 0.85rem;
+}
+
+.greensomes-player-grid .hcp-box {
+    align-self: end;
+}
+
+
+/* =========================================================
+   3. HANDICAP ALLOWANCE DISPLAY
+========================================================= */
+
+.allowance-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0.7rem;
+
+    padding: 0 0.85rem 0.85rem;
+}
+
+.allowance-summary div {
+    padding: 0.65rem;
+
+    background: #fffaf0;
+
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.allowance-summary span {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 0.66rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.allowance-summary strong {
+    display: block;
+
+    margin-top: 0.25rem;
+
+    color: var(--green);
+
+    font-size: 1.3rem;
+}
+
+
+/* =========================================================
+   4. SCORECARD TABLE
+========================================================= */
+
+.greensomes-table th:last-child {
+    background: var(--gold);
+    color: #111;
+}
+
+.greensomes-table td:last-child {
+    background: rgba(184, 154, 66, 0.12);
+
+    color: var(--green);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   5. DRIVE SELECTION
+========================================================= */
+
+.drive-select {
+    width: 100%;
+    min-width: 54px;
+    height: 32px;
+    min-height: 32px;
+
+    padding: 0.15rem;
+
+    background: white;
+
+    border: 1px solid #a89d86;
+    border-radius: 5px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.78rem;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.drive-select:focus {
+    background: #fffbe8;
+
+    border-color: var(--gold);
+    outline: 2px solid var(--gold);
+}
+
+.drive-a {
+    background: rgba(13, 92, 56, 0.14) !important;
+    color: var(--green);
+
+    font-weight: bold;
+}
+
+.drive-b {
+    background: rgba(184, 154, 66, 0.2) !important;
+    color: var(--green);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   6. MODE-SPECIFIC SCORE CELLS
+========================================================= */
+
+.stableford-value {
+    color: var(--green);
+    font-weight: bold;
+}
+
+.medal-value {
+    color: var(--text);
+    font-weight: bold;
+}
+
+.hidden-column {
+    display: none;
+}
+
+
+/* =========================================================
+   7. TEAM TOTALS
+========================================================= */
+
+.greensomes-totals {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.greensomes-totals div:last-child {
+    background: rgba(184, 154, 66, 0.2);
+}
+
+.team-score {
+    color: var(--green);
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   8. SHARE CARD — PLAYER INFORMATION
+========================================================= */
+
+.greensomes-share-players {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.greensomes-share-players div {
+    padding: 12px;
+
+    background: #fffaf0;
+
+    border: 2px solid var(--line-dark);
+
+    text-align: center;
+}
+
+.greensomes-share-players strong {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+}
+
+.greensomes-share-players span {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   9. SHARE CARD — MODE LABEL
+========================================================= */
+
+.share-mode-label {
+    display: inline-block;
+
+    margin-top: 8px;
+    padding: 6px 12px;
+
+    background: var(--green);
+    color: white;
+
+    border-radius: 6px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   10. SHARE CARD — TOTALS
+========================================================= */
+
+.greensomes-share-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.greensomes-share-summary div {
+    padding: 16px;
+
+    background: #fffaf0;
+
+    border: 2px solid var(--green);
+
+    text-align: center;
+}
+
+.greensomes-share-summary div:last-child {
+    background: rgba(184, 154, 66, 0.2);
+}
+
+.greensomes-share-summary strong {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 18px;
+
+    text-transform: uppercase;
+}
+
+.greensomes-share-summary span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--green);
+
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   11. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .greensomes-player-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .allowance-summary {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   12. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+    .mode-toggle {
+        gap: 0.5rem;
+
+        padding: 0.6rem;
+    }
+
+    .mode-btn {
+        min-height: 38px;
+
+        padding: 0.55rem;
+
+        font-size: 0.72rem;
+    }
+
+    .greensomes-player-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 0.5rem;
+
+        padding: 0.6rem;
+    }
+
+    .allowance-summary {
+        grid-template-columns: 1fr;
+
+        gap: 0.5rem;
+
+        padding: 0 0.6rem 0.6rem;
+    }
+
+    .drive-select {
+        min-width: 42px;
+        height: 30px;
+        min-height: 30px;
+
+        padding: 0.1rem;
+
+        font-size: 0.68rem;
+    }
+
+    .greensomes-totals {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .greensomes-share-players {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .greensomes-share-summary {
+        grid-template-columns: 1fr;
+    }
+}
