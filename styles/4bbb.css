@@ -1,1 +1,43 @@
-/* 4BBB specific styles */
+/* =========================================================
+   BELLS 4BBB — PAGE-SPECIFIC STYLES
+========================================================= */
+
+
+/* Emphasise the Better Ball column */
+
+.score-table th:last-child {
+    background: var(--gold);
+    color: #111;
+}
+
+.score-table td:last-child {
+    background: rgba(184, 154, 66, 0.12);
+    color: var(--green);
+
+    font-weight: bold;
+}
+
+
+/* Optional class applied by JavaScript to the scoring player */
+
+.best-ball {
+    background: rgba(184, 154, 66, 0.26) !important;
+    color: var(--green) !important;
+
+    font-weight: bold;
+}
+
+
+/* Tighten the seven-column scorecard on small screens */
+
+@media (max-width: 600px) {
+    .score-table th,
+    .score-table td {
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+    }
+
+    .score-table input {
+        width: 38px;
+    }
+}
