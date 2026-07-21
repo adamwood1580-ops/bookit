@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#003f24">
+
+    <title>Match Play | Bells Golf Suite</title>
+
+    <link rel="stylesheet" href="../styles/common.css?v=1">
+    <link rel="stylesheet" href="../styles/matchplay.css?v=1">
+</head>
+
+<body>
+    <main class="page">
+        <a href="index.html" class="home-btn">
+            ← Home
+        </a>
+
+        <section class="scorecard">
+            <header class="hero">
+                <img
+                    src="../assets/bells-logo.PNG"
+                    alt="Bells Hotel and Country Club"
+                    class="club-logo"
+                >
+
+                <div class="title-block">
+                    <h1>Match Play</h1>
+                </div>
+            </header>
+
+            <!-- MATCH SETTINGS -->
+            <section class="panel">
+                <div class="panel-title">
+                    Match Settings
+                </div>
+
+                <div class="match-settings-grid">
+                    <div>
+                        <label for="matchFormat">
+                            Format
+                        </label>
+
+                        <select id="matchFormat">
+                            <option value="singles">
+                                Singles
+                            </option>
+
+                            <option value="fourball">
+                                Fourball
+                            </option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="scoringMode">
+                            Scoring
+                        </label>
+
+                        <select id="scoringMode">
+                            <option value="handicap">
+                                Handicap
+                            </option>
+
+                            <option value="gross">
+                                Gross
+                            </option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="teeSelect">
+                            Tee
+                        </label>
+
+                        <select id="teeSelect"></select>
+                    </div>
+
+                    <div>
+                        <label for="roundDate">
+                            Date
+                        </label>
+
+                        <input
+                            id="roundDate"
+                            type="date"
+                        >
+                    </div>
+                </div>
+
+                <div
+                    id="courseInfo"
+                    class="course-info"
+                ></div>
+            </section>
+
+            <!-- PLAYER DETAILS -->
+            <section class="panel">
+                <div class="panel-title">
+                    Players
+                </div>
+
+                <div
+                    id="playerGrid"
+                    class="match-player-grid"
+                >
+                    <!-- PLAYER A -->
+                    <article
+                        class="match-player-card team-a-card"
+                        data-player-card="a"
+                    >
+                        <h3>Team A — Player 1</h3>
+
+                        <label for="playerAName">
+                            Name
+                        </label>
+
+                        <input
+                            id="playerAName"
+                            type="text"
+                            placeholder="Player A"
+                            autocomplete="name"
+                        >
+
+                        <label for="playerAIndex">
+                            Handicap Index
+                        </label>
+
+                        <input
+                            id="playerAIndex"
+                            type="number"
+                            min="-10"
+                            max="54"
+                            step="0.1"
+                            inputmode="decimal"
+                            placeholder="0.0"
+                        >
+
+                        <div class="player-handicap-row">
+                            <div class="hcp-box">
+                                <span>Course Handicap</span>
+                                <strong id="playerACourse">-</strong>
+                            </div>
+
+                            <div class="hcp-box">
+                                <span>Match Strokes</span>
+                                <strong id="playerAStrokes">-</strong>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PLAYER B -->
+                    <article
+                        class="match-player-card team-b-card"
+                        data-player-card="b"
+                    >
+                        <h3>Team B — Player 1</h3>
+
+                        <label for="playerBName">
+                            Name
+                        </label>
+
+                        <input
+                            id="playerBName"
+                            type="text"
+                            placeholder="Player B"
+                            autocomplete="name"
+                        >
+
+                        <label for="playerBIndex">
+                            Handicap Index
+                        </label>
+
+                        <input
+                            id="playerBIndex"
+                            type="number"
+                            min="-10"
+                            max="54"
+                            step="0.1"
+                            inputmode="decimal"
+                            placeholder="0.0"
+                        >
+
+                        <div class="player-handicap-row">
+                            <div class="hcp-box">
+                                <span>Course Handicap</span>
+                                <strong id="playerBCourse">-</strong>
+                            </div>
+
+                            <div class="hcp-box">
+                                <span>Match Strokes</span>
+                                <strong id="playerBStrokes">-</strong>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PLAYER C -->
+                    <article
+                        class="match-player-card team-a-card fourball-player"
+                        data-player-card="c"
+                    >
+                        <h3>Team A — Player 2</h3>
+
+                        <label for="playerCName">
+                            Name
+                        </label>
+
+                        <input
+                            id="playerCName"
+                            type="text"
+                            placeholder="Player C"
+                            autocomplete="name"
+                        >
+
+                        <label for="playerCIndex">
+                            Handicap Index
+                        </label>
+
+                        <input
+                            id="playerCIndex"
+                            type="number"
+                            min="-10"
+                            max="54"
+                            step="0.1"
+                            inputmode="decimal"
+                            placeholder="0.0"
+                        >
+
+                        <div class="player-handicap-row">
+                            <div class="hcp-box">
+                                <span>Course Handicap</span>
+                                <strong id="playerCCourse">-</strong>
+                            </div>
+
+                            <div class="hcp-box">
+                                <span>Match Strokes</span>
+                                <strong id="playerCStrokes">-</strong>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PLAYER D -->
+                    <article
+                        class="match-player-card team-b-card fourball-player"
+                        data-player-card="d"
+                    >
+                        <h3>Team B — Player 2</h3>
+
+                        <label for="playerDName">
+                            Name
+                        </label>
+
+                        <input
+                            id="playerDName"
+                            type="text"
+                            placeholder="Player D"
+                            autocomplete="name"
+                        >
+
+                        <label for="playerDIndex">
+                            Handicap Index
+                        </label>
+
+                        <input
+                            id="playerDIndex"
+                            type="number"
+                            min="-10"
+                            max="54"
+                            step="0.1"
+                            inputmode="decimal"
+                            placeholder="0.0"
+                        >
+
+                        <div class="player-handicap-row">
+                            <div class="hcp-box">
+                                <span>Course Handicap</span>
+                                <strong id="playerDCourse">-</strong>
+                            </div>
+
+                            <div class="hcp-box">
+                                <span>Match Strokes</span>
+                                <strong id="playerDStrokes">-</strong>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- LIVE MATCH STATUS -->
+            <section class="match-status-panel">
+                <span class="match-status-label">
+                    Match Status
+                </span>
+
+                <strong id="matchStatus">
+                    All Square
+                </strong>
+
+                <small id="matchProgress">
+                    No holes completed
+                </small>
+            </section>
+
+            <!-- SCORECARD -->
+            <section class="panel">
+                <div class="panel-title">
+                    Scorecard
+                </div>
+
+                <div class="table-wrap match-table-wrap">
+                    <table class="score-table match-table">
+                        <thead>
+                            <tr>
+                                <th>Hole</th>
+                                <th>Yards</th>
+                                <th>Par</th>
+                                <th>SI</th>
+
+                                <th class="player-a-column">
+                                    A1
+                                </th>
+
+                                <th class="player-c-column fourball-column">
+                                    A2
+                                </th>
+
+                                <th class="player-b-column">
+                                    B1
+                                </th>
+
+                                <th class="player-d-column fourball-column">
+                                    B2
+                                </th>
+
+                                <th>Hole</th>
+                                <th>Match</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="frontNine"></tbody>
+
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">Out</td>
+
+                                <td id="outAGross">-</td>
+
+                                <td
+                                    id="outCGross"
+                                    class="fourball-column"
+                                >
+                                    -
+                                </td>
+
+                                <td id="outBGross">-</td>
+
+                                <td
+                                    id="outDGross"
+                                    class="fourball-column"
+                                >
+                                    -
+                                </td>
+
+                                <td id="outResult">-</td>
+                                <td id="outStatus">AS</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <table class="score-table match-table">
+                        <thead>
+                            <tr>
+                                <th>Hole</th>
+                                <th>Yards</th>
+                                <th>Par</th>
+                                <th>SI</th>
+
+                                <th class="player-a-column">
+                                    A1
+                                </th>
+
+                                <th class="player-c-column fourball-column">
+                                    A2
+                                </th>
+
+                                <th class="player-b-column">
+                                    B1
+                                </th>
+
+                                <th class="player-d-column fourball-column">
+                                    B2
+                                </th>
+
+                                <th>Hole</th>
+                                <th>Match</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="backNine"></tbody>
+
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">In</td>
+
+                                <td id="inAGross">-</td>
+
+                                <td
+                                    id="inCGross"
+                                    class="fourball-column"
+                                >
+                                    -
+                                </td>
+
+                                <td id="inBGross">-</td>
+
+                                <td
+                                    id="inDGross"
+                                    class="fourball-column"
+                                >
+                                    -
+                                </td>
+
+                                <td id="inResult">-</td>
+                                <td id="inStatus">AS</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <!-- FINAL SUMMARY -->
+            <section class="totals match-totals">
+                <div>
+                    <span>Team A Holes</span>
+                    <strong id="teamAHoles">0</strong>
+                </div>
+
+                <div>
+                    <span>Halved Holes</span>
+                    <strong id="halvedHoles">0</strong>
+                </div>
+
+                <div>
+                    <span>Team B Holes</span>
+                    <strong id="teamBHoles">0</strong>
+                </div>
+
+                <div>
+                    <span>Result</span>
+                    <strong id="finalResult">AS</strong>
+                </div>
+            </section>
+
+            <div class="actions">
+                <button
+                    id="resetRoundBtn"
+                    class="reset-btn"
+                    type="button"
+                >
+                    Reset Round
+                </button>
+
+                <button
+                    id="shareScorecardBtn"
+                    class="share-btn"
+                    type="button"
+                >
+                    Save / Share Match
+                </button>
+            </div>
+
+            <!-- GUIDE -->
+            <section class="panel guide">
+                <div class="panel-title">
+                    Match Play Guide
+                </div>
+
+                <p>
+                    Enter each player's gross score. Handicap strokes are
+                    applied automatically by stroke index. In fourball, the
+                    lowest nett score from each team represents that team on
+                    the hole.
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <!-- SHARE CARD -->
+    <section
+        id="shareCard"
+        class="share-card match-share-card"
+        aria-hidden="true"
+    >
+        <header class="share-header">
+            <img
+                src="../assets/bells-logo.PNG"
+                alt=""
+                class="share-logo"
+            >
+
+            <div>
+                <h2>Bells Match Play</h2>
+                <p id="shareSubtitle">
+                    Singles Handicap Match
+                </p>
+            </div>
+        </header>
+
+        <div class="share-round-info match-share-info">
+            <div>
+                <strong>Date</strong>
+                <span id="shareDate">-</span>
+            </div>
+
+            <div>
+                <strong>Tee</strong>
+                <span id="shareTee">-</span>
+            </div>
+
+            <div>
+                <strong>Format</strong>
+                <span id="shareFormat">-</span>
+            </div>
+
+            <div>
+                <strong>Scoring</strong>
+                <span id="shareScoring">-</span>
+            </div>
+
+            <div>
+                <strong>Allowance</strong>
+                <span id="shareAllowance">-</span>
+            </div>
+
+            <div>
+                <strong>Result</strong>
+                <span id="shareResult">AS</span>
+            </div>
+        </div>
+
+        <div
+            id="sharePlayers"
+            class="match-share-players"
+        ></div>
+
+        <div class="share-tables match-share-tables">
+            <table id="shareFront">
+                <thead>
+                    <tr id="shareFrontHeader"></tr>
+                </thead>
+
+                <tbody></tbody>
+            </table>
+
+            <table id="shareBack">
+                <thead>
+                    <tr id="shareBackHeader"></tr>
+                </thead>
+
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="share-summary match-share-summary">
+            <div>
+                <strong>Team A Holes</strong>
+                <span id="shareTeamAHoles">0</span>
+            </div>
+
+            <div>
+                <strong>Halved</strong>
+                <span id="shareHalvedHoles">0</span>
+            </div>
+
+            <div>
+                <strong>Team B Holes</strong>
+                <span id="shareTeamBHoles">0</span>
+            </div>
+
+            <div>
+                <strong>Final Result</strong>
+                <span id="shareFinalResult">AS</span>
+            </div>
+        </div>
+    </section>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+        defer
+    ></script>
+
+    <script src="../js/course-data.js"></script>
+    <script src="../js/matchplay.js"></script>
+</body>
+</html>
