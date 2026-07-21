@@ -1,0 +1,413 @@
+/* =========================================================
+   BELLS MATCH PLAY — PAGE-SPECIFIC STYLES
+========================================================= */
+
+
+/* =========================================================
+   1. MATCH SETTINGS
+========================================================= */
+
+.match-settings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0.7rem;
+
+    padding: 0.85rem;
+}
+
+
+/* =========================================================
+   2. PLAYER CARDS
+========================================================= */
+
+.match-player-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0.7rem;
+
+    padding: 0.85rem;
+}
+
+.match-player-card {
+    padding: 0.7rem;
+
+    background: #fffaf0;
+
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
+}
+
+.match-player-card h3 {
+    margin: 0 0 0.65rem;
+
+    color: var(--green);
+
+    font-size: 0.83rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.team-a-card {
+    border-top: 5px solid var(--green);
+}
+
+.team-b-card {
+    border-top: 5px solid var(--gold);
+}
+
+.player-handicap-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0.45rem;
+
+    margin-top: 0.65rem;
+}
+
+.fourball-player.is-hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   3. LIVE MATCH STATUS
+========================================================= */
+
+.match-status-panel {
+    margin-bottom: 0.9rem;
+    padding: 1rem;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--green-light),
+            var(--green)
+        );
+
+    color: white;
+
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.match-status-label {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 0.7rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.match-status-panel strong {
+    display: block;
+
+    margin-top: 0.2rem;
+
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    line-height: 1;
+}
+
+.match-status-panel small {
+    display: block;
+
+    margin-top: 0.45rem;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   4. MATCH TABLE
+========================================================= */
+
+.match-table-wrap {
+    align-items: start;
+}
+
+.match-table {
+    table-layout: fixed;
+}
+
+.match-table th,
+.match-table td {
+    padding-left: 0.22rem;
+    padding-right: 0.22rem;
+}
+
+.match-table th:nth-last-child(2),
+.match-table td:nth-last-child(2) {
+    background: rgba(184, 154, 66, 0.12);
+}
+
+.match-table th:last-child {
+    background: var(--gold);
+    color: #111;
+}
+
+.match-table td:last-child {
+    color: var(--green);
+    font-size: 0.74rem;
+    font-weight: bold;
+}
+
+.match-table .score-input {
+    width: 42px;
+}
+
+.fourball-column.is-hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   5. PLAYER COLUMNS
+========================================================= */
+
+.player-a-column,
+.player-c-column {
+    box-shadow: inset 0 3px 0 var(--green);
+}
+
+.player-b-column,
+.player-d-column {
+    box-shadow: inset 0 3px 0 var(--gold);
+}
+
+
+/* =========================================================
+   6. HOLE RESULTS
+========================================================= */
+
+.hole-result {
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hole-result.team-a-win {
+    background: rgba(0, 63, 36, 0.15) !important;
+    color: var(--green);
+}
+
+.hole-result.team-b-win {
+    background: rgba(184, 154, 66, 0.25) !important;
+    color: #5c4907;
+}
+
+.hole-result.halved {
+    background: rgba(107, 101, 89, 0.1) !important;
+    color: var(--muted);
+}
+
+.match-complete-row {
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   7. SHOT MARKERS
+========================================================= */
+
+.match-shot-marker {
+    display: block;
+
+    margin-top: 0.1rem;
+
+    color: var(--red);
+
+    font-size: 0.56rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   8. MATCH TOTALS
+========================================================= */
+
+.match-totals {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.match-totals div:last-child strong {
+    font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   9. SHARE PLAYER CARDS
+========================================================= */
+
+.match-share-players {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.match-share-player {
+    padding: 12px;
+
+    background: #fffaf0;
+
+    border: 2px solid var(--line-dark);
+
+    text-align: center;
+}
+
+.match-share-player.team-a-share {
+    border-top: 6px solid var(--green);
+}
+
+.match-share-player.team-b-share {
+    border-top: 6px solid var(--gold);
+}
+
+.match-share-player strong {
+    display: block;
+
+    color: var(--green);
+
+    font-size: 16px;
+
+    text-transform: uppercase;
+}
+
+.match-share-player span {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.match-share-player small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   10. SHARE TABLE
+========================================================= */
+
+.match-share-tables th,
+.match-share-tables td {
+    padding: 6px;
+
+    font-size: 15px;
+}
+
+.match-share-tables th:last-child {
+    background: var(--gold);
+    color: #111;
+}
+
+
+/* =========================================================
+   11. SHARE SUMMARY
+========================================================= */
+
+.match-share-summary {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.match-share-summary div:last-child span {
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   12. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .match-settings-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .match-player-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   13. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+    .match-settings-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 0.5rem;
+
+        padding: 0.6rem;
+    }
+
+    .match-player-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 0.5rem;
+
+        padding: 0.6rem;
+    }
+
+    .match-player-card {
+        padding: 0.55rem;
+    }
+
+    .match-player-card h3 {
+        font-size: 0.68rem;
+    }
+
+    .player-handicap-row {
+        grid-template-columns: 1fr;
+
+        gap: 0.35rem;
+    }
+
+    .match-table th,
+    .match-table td {
+        padding: 0.18rem 0.08rem;
+
+        font-size: 0.62rem;
+    }
+
+    .match-table .score-input {
+        width: 31px;
+        height: 29px;
+        min-height: 29px;
+
+        padding: 0.05rem;
+
+        font-size: 0.82rem;
+    }
+
+    .match-shot-marker {
+        font-size: 0.48rem;
+    }
+
+    .match-totals {
+        grid-template-columns: 1fr 1fr;
+    }
+}
